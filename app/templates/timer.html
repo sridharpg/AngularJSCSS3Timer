@@ -1,0 +1,17 @@
+<time class='timer {{getTimerStatus();}}'>
+    <div class='hands'>
+        <span class='static hand'></span>
+        <span class='moving hand' style="-webkit-transform: rotate({{currentHandAngle}}deg); -moz-transform: rotate({{currentHandAngle}}deg)"></span>
+        <span class='center'></span>
+    </div>
+    <div class='shadow'></div>
+    <div class='inner'>
+        <div class='right holder'>
+            <div class='fill' style="-webkit-transform: rotate({{currentRightAngle}}deg); -moz-transform: rotate({{currentRightAngle}}deg)"></div>
+        </div>
+        <div class='left holder'>
+            <div class='fill' style="-webkit-transform: rotate({{currentLeftAngle}}deg); -moz-transform: rotate({{currentLeftAngle}}deg)"></div>
+        </div>
+    </div>
+    <div class='counter'>{{getReadableCurrentTime();}}</div>
+</time>

@@ -1,0 +1,38 @@
+body {
+    background: #eee;
+}
+
+footer {
+    width: 300px;
+    border: 1px solid #aaa;
+    position: relative;
+}
+
+footer button {
+    border: 1px solid #222;
+    background: #ccc;
+    border-radius: 3px;
+}
+
+footer button:hover {
+    background: #eee;
+}
+
+footer button:hover:active {
+    background: #ccc;
+}
+
+footer .console {
+    background: white;
+    height: 100%;
+    width: 60%;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    font-family: verdana;
+    font-size: 14px;
+    padding-top: 3px;
+    padding-left: 5px;
+}
