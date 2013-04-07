@@ -19,11 +19,13 @@ timerApp.controller('TimerHandlerCtrl', function ($rootScope, $scope) {
         timer.$on('timer_stopped', function() {
             $scope.startStatus = 'Start';
             $scope.timerStatus = 'Stopped';
+	    isStopped = true;
         });
 
         timer.$on('timer_ended', function() {
             $scope.startStatus = 'Start';
             $scope.timerStatus = 'Timer Ended!';
+	    isStopped = true;
         });
     };
 
