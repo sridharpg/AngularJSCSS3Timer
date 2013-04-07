@@ -4,6 +4,7 @@ timerApp.controller('TimerHandlerCtrl', function ($rootScope, $scope) {
     var isStopped = false, timer, addEvents;
 
     $scope.timerStatus = '';
+    $scope.startStatus = 'Stop';
 
     $rootScope.$on('timer_initialized', function() {
         timer = angular.element('.timer').scope();
@@ -14,23 +15,21 @@ timerApp.controller('TimerHandlerCtrl', function ($rootScope, $scope) {
         timer.$on('timer_started', function() {
             $scope.startStatus = 'Stop';
             $scope.timerStatus = 'Started';
+            isStopped = false;
         });
 
         timer.$on('timer_stopped', function() {
             $scope.startStatus = 'Start';
             $scope.timerStatus = 'Stopped';
-	    isStopped = true;
+	        isStopped = true;
         });
 
         timer.$on('timer_ended', function() {
             $scope.startStatus = 'Start';
             $scope.timerStatus = 'Timer Ended!';
-	    isStopped = true;
+	        isStopped = true;
         });
     };
-
-
-    $scope.startStatus = 'Stop';
 
     $scope.restart = function() {
         timer.restart();
@@ -38,6 +37,5 @@ timerApp.controller('TimerHandlerCtrl', function ($rootScope, $scope) {
 
     $scope.toggleStop = function() {
         timer[isStopped? 'start': 'stop']();
-        isStopped = !isStopped;
     };
 });
